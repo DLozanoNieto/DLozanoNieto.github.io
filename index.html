@@ -3,48 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Your Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
+<div class="container">
+
+    <div class="sidebar">
+
+        <h1>Cargo® Portfolio</h1>
+
         <nav>
-            <ul>
-                <li><a href="#">Your Name</a></li>
-                <li><a href="#" class="active">Project One</a></li>
-                <li><a href="#">Project Two</a></li>
-                <li><a href="#">Project Three</a></li>
-                <li><a href="#">Photography</a></li>
-                <li><a href="#">Info</a></li>
-            </ul>
+            <a href="projects.html">Projects</a>
+            <a href="info.html">Information</a>
         </nav>
-    </header>
 
-    <main>
-
-        <section class="gallery">
-
-            <div class="image-panel left">
-                <img src="images/image1.jpg" alt="Project Image">
-            </div>
-
-            <div class="image-panel right">
-                <img src="images/image2.jpg" alt="Project Image">
-
-                <button class="arrow">
-                    &#8250;
-                </button>
-            </div>
-
-        </section>
-
-        <div class="project-title">
-            <a href="#">Current Project</a>
+        <div class="social">
+            <a href="mailto:your@email.com">Email</a>
+            <a href="#">Instagram</a>
         </div>
 
-    </main>
+    </div>
+
+    <div class="content">
+
+        <h2>Lorem Ipsum EST;</h2>
+
+        <p>
+            Dolor sit amet, consectetur adipiscing elit. Ut nisl metus,
+            accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet
+            urna ut mi tempor euismod.
+        </p>
+
+        <p>
+            Curabitur congue accumsan ante, consectetur eleifend purus
+            laoreet in. Ut facilisis tincidunt neque in pharetra.
+            Suspendisse tortor lacus, ultrices at magna in,
+            ullamcorper faucibus sem.
+        </p>
+
+    </div>
+
+    <div class="clock">
+        <span id="time"></span>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
