@@ -1,4 +1,4 @@
-/* ---------- RESET ---------- */
+/* ---------------- RESET ---------------- */
 
 * {
     margin: 0;
@@ -6,133 +6,172 @@
     box-sizing: border-box;
 }
 
-/* ---------- PAGE ---------- */
+/* ---------------- BODY ---------------- */
 
 body {
-    background: #111111;
-
+    background: #111;
     font-family: Georgia, serif;
-
-    min-height: 100vh;
-
-    padding: 10px;
+    color: #222;
 }
 
-/* ---------- MAIN PANEL ---------- */
+/* ---------------- MAIN LAYOUT ---------------- */
 
 .container {
-
     background: #efefef;
 
-    border-radius: 22px;
-
-    min-height: calc(100vh - 20px);
+    min-height: 100vh;
 
     display: grid;
 
     grid-template-columns:
-        180px
-        420px
-        1fr;
-
-    padding: 22px;
+        220px
+        1fr;   /* ONLY TWO COLUMNS NOW */
 
     gap: 40px;
+
+    padding: 24px;
 }
 
-/* ---------- SIDEBAR ---------- */
+/* ---------------- SIDEBAR ---------------- */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
 
 .sidebar h1 {
-
     font-size: 18px;
-    font-weight: 600;
-
-    margin-bottom: 28px;
+    font-weight: normal;
+    margin-bottom: 30px;
 }
 
-.sidebar nav {
-
+.project-links {
     display: flex;
     flex-direction: column;
-
-    gap: 4px;
-
-    margin-bottom: 28px;
+    gap: 10px;
 }
 
-.sidebar a {
-
-    text-decoration: none;
-
+.project-links a {
     color: #222;
-
-    font-size: 18px;
-}
-
-.sidebar a:hover {
-    opacity: .6;
-}
-
-.social {
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 4px;
-}
-
-/* ---------- CONTENT ---------- */
-
-.content {
-
-    max-width: 430px;
-}
-
-.content h2 {
-
-    font-size: 18px;
-    font-weight: 400;
-
-    margin-bottom: 22px;
-}
-
-.content p {
-
-    font-size: 18px;
-
-    line-height: 1.25;
-
-    margin-bottom: 32px;
-}
-
-/* ---------- CLOCK ---------- */
-
-.clock {
-
-    display: flex;
-
-    justify-content: flex-end;
-
-    align-items: flex-start;
-
-    color: #999;
-
+    text-decoration: none;
     font-size: 16px;
 }
 
-/* ---------- MOBILE ---------- */
+.project-links a:hover {
+    opacity: 0.6;
+}
+
+/* ---------------- CONTACT ---------------- */
+
+.contact {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact a {
+    color: #222;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    opacity: 0.6;
+}
+
+/* ---------------- VIEWER (RIGHT SIDE) ---------------- */
+
+.viewer {
+    height: 100vh;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+
+/* ---------------- PROJECT CONTENT ---------------- */
+
+.project {
+    display: none;
+}
+
+.project.active {
+    display: block;
+}
+
+.project h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.project p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.project img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ---------------- SCROLLBAR ---------------- */
+
+.viewer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.viewer::-webkit-scrollbar-thumb {
+    background: #bbb;
+}
+
+/* ---------------- MOBILE ---------------- */
 
 @media (max-width: 900px) {
 
     .container {
-
         grid-template-columns: 1fr;
-
         gap: 30px;
     }
 
-    .clock {
-
-        justify-content: flex-start;
+    .viewer {
+        height: auto;
     }
+}
+
+.media-block {
+    margin-bottom: 30px;
+}
+
+.media-block img {
+    width: 50%;
+    display: block;
+    margin: 0 0 8px 0;
+}
+
+.caption {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.project {
+    display: none;
+    padding-bottom: 60px;
+}
+
+.project.active {
+    display: block;
+}
+
+.project-link {
+    color: #222;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+/* ACTIVE STATE */
+.project-link.active-link {
+    color: red;
 }

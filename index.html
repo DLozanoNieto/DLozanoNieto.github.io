@@ -1,59 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <div class="sidebar">
+        <!-- LEFT COLUMN -->
+        <aside class="sidebar">
 
-        <h1>Cargo® Portfolio</h1>
+            <h1>Diego Lozano</h1>
 
-        <nav>
-            <a href="projects.html">Projects</a>
-            <a href="info.html">Information</a>
-        </nav>
+            <nav class="project-links">
 
-        <div class="social">
-            <a href="mailto:your@email.com">Email</a>
-            <a href="#">Instagram</a>
-        </div>
+                <nav class="project-links">
+
+
+                    <a href="#" class="project-link" onclick="showProject('texcoco'); return false;">
+                        Texcoco
+                    </a>
+
+                    <a href="#" class="project-link" onclick="showProject('wetlands'); return false;">
+                        Wetlands
+                    </a>
+
+                    <a href="#" class="project-link" onclick="showProject('mapping'); return false;">
+                        Counter Mapping
+                    </a>
+
+                    <a href="#" class="project-link" onclick="showProject('info'); return false;">
+                        Info
+                    </a>                    
+
+                </nav>
+
+            </nav>
+
+            <div class="contact">
+                <a href="mailto:diego.lozano.vmbv@gmail.com">Email</a>
+                <a href="https://instagram.com">Instagram</a>
+            </div>
+
+        </aside>
+
+
+        <!-- RIGHT COLUMN -->
+        <section class="viewer">
+
+
+            <!-- TEXCOCO -->
+            <div id="texcoco" class="project">
+
+
+                <div class="media-block">
+                    <img src="images/texcoco/test.JPG" alt="">
+                    <p class="caption">Texcoco image caption 1 (placeholder)</p>
+                </div>
+
+                <div class="media-block">
+                    <img src="images/texcoco/02.jpg" alt="">
+                    <p class="caption">Texcoco image caption 2 (placeholder)</p>
+                </div>
+
+                <div class="media-block">
+                    <img src="images/texcoco/03.jpg" alt="">
+                    <p class="caption">Texcoco image caption 3 (placeholder)</p>
+                </div>
+
+            </div>
+
+
+            <!-- WETLANDS -->
+            <div id="wetlands" class="project">
+
+
+                <div class="media-block">
+                    <img src="images/wetlands/01.jpg" alt="">
+                    <p class="caption">Wetlands image caption 1 (placeholder)</p>
+                </div>
+
+                <div class="media-block">
+                    <img src="images/wetlands/02.jpg" alt="">
+                    <p class="caption">Wetlands image caption 2 (placeholder)</p>
+                </div>
+
+            </div>
+
+
+            <!-- MAPPING -->
+            <div id="mapping" class="project">
+
+
+                <div class="media-block">
+                    <img src="images/mapping/01.jpg" alt="">
+                    <p class="caption">Mapping image caption 1 (placeholder)</p>
+                </div>
+
+                <div class="media-block">
+                    <img src="images/mapping/02.jpg" alt="">
+                    <p class="caption">Mapping image caption 2 (placeholder)</p>
+                </div>
+
+                <div class="media-block">
+                    <img src="images/mapping/03.jpg" alt="">
+                    <p class="caption">Mapping image caption 3 (placeholder)</p>
+                </div>
+
+            </div>
+
+            <!-- Info (default blank state / placeholder) -->
+            <div id="info" class="project">
+
+                <h2>Info</h2>
+
+                <p>
+                    Hi! My name is Diego Lozano. I am a photographer,
+                    landscape designer, and mountain biker based out
+                    of Vancouver British Columbia. Here are my stories. Enjoy.
+                </p>
+
+            </div>
+
+        </section>
 
     </div>
 
-    <div class="content">
-
-        <h2>Lorem Ipsum EST;</h2>
-
-        <p>
-            Dolor sit amet, consectetur adipiscing elit. Ut nisl metus,
-            accumsan id eros id, vehicula tincidunt nisl. Nulla sit amet
-            urna ut mi tempor euismod.
-        </p>
-
-        <p>
-            Curabitur congue accumsan ante, consectetur eleifend purus
-            laoreet in. Ut facilisis tincidunt neque in pharetra.
-            Suspendisse tortor lacus, ultrices at magna in,
-            ullamcorper faucibus sem.
-        </p>
-
-    </div>
-
-    <div class="clock">
-        <span id="time"></span>
-    </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
