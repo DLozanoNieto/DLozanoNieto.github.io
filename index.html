@@ -11,48 +11,66 @@
 
 <body>
 
+
     <div class="container">
 
         <!-- LEFT COLUMN -->
         <aside class="sidebar">
 
-            <h1>Diego Lozano</h1>
 
-            <nav class="project-links">
+            <div class="landing">
+                <a href="#" class="landing" onclick="showProject('landing'); return false;">
+                    Diego Lozano
+                </a>
+
 
                 <nav class="project-links">
 
+                    <nav class="project-links">
 
-                    <a href="#" class="project-link" onclick="showProject('texcoco'); return false;">
-                        Texcoco
-                    </a>
+                        <a href="#" class="project-link" onclick="showProject('texcoco'); return false;">
+                            Texcoco
+                        </a>
 
-                    <a href="#" class="project-link" onclick="showProject('wetlands'); return false;">
-                        Wetlands
-                    </a>
+                        <a href="#" class="project-link" onclick="showProject('wetlands'); return false;">
+                            Wetlands
+                        </a>
 
-                    <a href="#" class="project-link" onclick="showProject('mapping'); return false;">
-                        Counter Mapping
-                    </a>
+                        <a href="#" class="project-link" onclick="showProject('mapping'); return false;">
+                            Counter Mapping
+                        </a>
 
-                    <a href="#" class="project-link" onclick="showProject('info'); return false;">
-                        Info
-                    </a>                    
+                        <a href="#" class="project-link" onclick="showProject('info'); return false;">
+                            Info
+                        </a>
+
+                    </nav>
 
                 </nav>
 
-            </nav>
-
-            <div class="contact">
-                <a href="mailto:diego.lozano.vmbv@gmail.com">Email</a>
-                <a href="https://instagram.com">Instagram</a>
-            </div>
+                <div class="contact">
+                    <a href="mailto:diego.lozano.vmbv@gmail.com">Email</a>
+                    <a href="https://instagram.com/d.n.l.fotos">Instagram</a>
+                </div>
 
         </aside>
 
 
         <!-- RIGHT COLUMN -->
         <section class="viewer">
+
+
+            <!-- LANDING -->
+            <div id="landing" class="project">
+
+                <h2> under construction...</h2>
+
+                <p>
+                    be back soon!
+                </p>
+
+            </div>
+
 
 
             <!-- TEXCOCO -->
@@ -133,6 +151,11 @@
     </div>
 
     <script src="script.js"></script>
+
+<script>
+    showProject("landing");
+</script>
+
 
 </body>
 

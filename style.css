@@ -51,6 +51,7 @@ body {
     gap: 10px;
 }
 
+
 .project-links a {
     color: #222;
     text-decoration: none;
@@ -64,7 +65,6 @@ body {
 /* ---------------- CONTACT ---------------- */
 
 .contact {
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -73,6 +73,7 @@ body {
 .contact a {
     color: #222;
     text-decoration: none;
+    font-size: 16px;
 }
 
 .contact a:hover {
@@ -80,6 +81,26 @@ body {
 }
 
 /* ---------------- VIEWER (RIGHT SIDE) ---------------- */
+
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.landing {
+    color: #222;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.landing a:hover {
+    opacity: 0.6;
+}
+
+/* ---------------- CONTACT ---------------- */
 
 .viewer {
     height: 100vh;
