@@ -1,162 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
+<header class="topbar">
+  <a class="site-title" href="#home">Gallery</a>
+  <nav class="menu">
+    <a href="#project-01" data-view="project-01">Docked</a>
+    <a href="#project-02" data-view="project-02">02—Project</a>
+    <a href="#project-03" data-view="project-03">03—Project</a>
+    <a href="#project-04" data-view="project-04">04—Project</a>
+  </nav>
+  <button class="info-btn" id="info-open">Information</button>
+</header>
 
-    <div class="container">
-
-        <!-- LEFT COLUMN -->
-        <aside class="sidebar">
-
-
-            <div class="landing">
-                <a href="#" class="landing" onclick="showProject('landing'); return false;">
-                    Diego Lozano
-                </a>
-
-
-                <nav class="project-links">
-
-                    <nav class="project-links">
-
-                        <a href="#" class="project-link" onclick="showProject('texcoco'); return false;">
-                            Texcoco
-                        </a>
-
-                        <a href="#" class="project-link" onclick="showProject('wetlands'); return false;">
-                            Wetlands
-                        </a>
-
-                        <a href="#" class="project-link" onclick="showProject('mapping'); return false;">
-                            Counter Mapping
-                        </a>
-
-                        <a href="#" class="project-link" onclick="showProject('info'); return false;">
-                            Info
-                        </a>
-
-                    </nav>
-
-                </nav>
-
-                <div class="contact">
-                    <a href="mailto:diego.lozano.vmbv@gmail.com">Email</a>
-                    <a href="https://instagram.com/d.n.l.fotos">Instagram</a>
-                </div>
-
-        </aside>
-
-
-        <!-- RIGHT COLUMN -->
-        <section class="viewer">
-
-
-            <!-- LANDING -->
-            <div id="landing" class="project">
-
-                <h2> under construction...</h2>
-
-                <p>
-                    be back soon!
-                </p>
-
-            </div>
-
-
-
-            <!-- TEXCOCO -->
-            <div id="texcoco" class="project">
-
-
-                <div class="media-block">
-                    <img src="images/texcoco/test.JPG" alt="">
-                    <p class="caption">Texcoco image caption 1 (placeholder)</p>
-                </div>
-
-                <div class="media-block">
-                    <img src="images/texcoco/02.jpg" alt="">
-                    <p class="caption">Texcoco image caption 2 (placeholder)</p>
-                </div>
-
-                <div class="media-block">
-                    <img src="images/texcoco/03.jpg" alt="">
-                    <p class="caption">Texcoco image caption 3 (placeholder)</p>
-                </div>
-
-            </div>
-
-
-            <!-- WETLANDS -->
-            <div id="wetlands" class="project">
-
-
-                <div class="media-block">
-                    <img src="images/wetlands/01.jpg" alt="">
-                    <p class="caption">Wetlands image caption 1 (placeholder)</p>
-                </div>
-
-                <div class="media-block">
-                    <img src="images/wetlands/02.jpg" alt="">
-                    <p class="caption">Wetlands image caption 2 (placeholder)</p>
-                </div>
-
-            </div>
-
-
-            <!-- MAPPING -->
-            <div id="mapping" class="project">
-
-
-                <div class="media-block">
-                    <img src="images/mapping/01.jpg" alt="">
-                    <p class="caption">Mapping image caption 1 (placeholder)</p>
-                </div>
-
-                <div class="media-block">
-                    <img src="images/mapping/02.jpg" alt="">
-                    <p class="caption">Mapping image caption 2 (placeholder)</p>
-                </div>
-
-                <div class="media-block">
-                    <img src="images/mapping/03.jpg" alt="">
-                    <p class="caption">Mapping image caption 3 (placeholder)</p>
-                </div>
-
-            </div>
-
-            <!-- Info (default blank state / placeholder) -->
-            <div id="info" class="project">
-
-                <h2>Info</h2>
-
-                <p>
-                    Hi! My name is Diego Lozano. I am a photographer
-                    landscape designer based out
-                    of Vancouver British Columbia. Here are my stories. Enjoy.
-                </p>
-
-            </div>
-
-        </section>
-
+<main>
+  <!-- Landing page: scrollable gallery. Each image links to a project.
+         Each .row is one line: one image, or two side by side. Width is --w (percent of page, keep each 50 or less). -->
+  <section class="view" id="home">
+    <div class="gallery">
+      <div class="row l">
+        <a class="tile" style="--w:46" href="#project-01"><img src="images/project-01/FUJI1162.jpg" alt="Project 01"><span class="tag">Docked</span></a>
+        <a class="tile" style="--w:34" href="#project-02"><img src="images/project-02/cover.jpg" alt="Project 02"><span class="tag">project_02</span></a>
+      </div>
+      <div class="row pair bot">
+        <a class="tile" style="--w:22" href="#project-03"><img src="images/project-03/cover.jpg" alt="Project 03"><span class="tag">project_03</span></a>
+      </div>
+      <div class="row r">
+        <a class="tile" style="--w:50" href="#project-04"><img src="images/project-04/cover.jpg" alt="Project 04"><span class="tag">project_04</span></a>
+      </div>
+      <div class="row pair top">
+        <a class="tile" style="--w:28" href="#project-01"><img src="images/project-01/1.jpg" alt="Project 01"><span class="tag">project_01</span></a>
+        <a class="tile" style="--w:44" href="#project-03"><img src="images/project-03/1.jpg" alt="Project 03"><span class="tag">project_03</span></a>
+      </div>
+      <div class="row c">
+        <a class="tile" style="--w:40" href="#project-02"><img src="images/project-02/1.jpg" alt="Project 02"><span class="tag">project_02</span></a>
+      </div>
+      <div class="row pair mid">
+        <a class="tile" style="--w:24" href="#project-04"><img src="images/project-04/1.jpg" alt="Project 04"><span class="tag">project_04</span></a>
+        <a class="tile" style="--w:46" href="#project-01"><img src="images/project-01/2.jpg" alt="Project 01"><span class="tag">project_01</span></a>
+      </div>
+      <div class="row l">
+        <a class="tile" style="--w:30" href="#project-03"><img src="images/project-03/2.jpg" alt="Project 03"><span class="tag">project_03</span></a>
+      </div>
+      <div class="row pair bot">
+        <a class="tile" style="--w:42" href="#project-02"><img src="images/project-02/2.jpg" alt="Project 02"><span class="tag">project_02</span></a>
+        <a class="tile" style="--w:26" href="#project-04"><img src="images/project-04/2.jpg" alt="Project 04"><span class="tag">project_04</span></a>
+      </div>
+      <div class="row r">
+        <a class="tile" style="--w:50" href="#project-01"><img src="images/project-01/3.jpg" alt="Project 01"><span class="tag">project_01</span></a>
+      </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section class="view" id="project-01">
+    <h2 class="page-title">Project Title–1</h2>
+    <p class="blurb">Replace this with a short paragraph about project 1. Two or three sentences on the idea, materials, year or context.</p>
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/project-01/FUJI1162.jpg" alt="Image title 1">
+        <figcaption><strong>Douglas </strong>// The Kirry Manx docked in North Vancouver </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-01/2.jpg" alt="Image title 2">
+        <figcaption><strong>Image title 2</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-01/3.jpg" alt="Image title 3">
+        <figcaption><strong>Image title 3</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-01/4.jpg" alt="Image title 4">
+        <figcaption><strong>Image title 4</strong></figcaption>
+      </figure>
+    </div>
+  </section>
 
-<script>
-    showProject("landing");
-</script>
+  <section class="view" id="project-02">
+    <h2 class="page-title">Project Title–2</h2>
+    <p class="blurb">Replace this with a short paragraph about project 2. Two or three sentences on the idea, materials, year or context.</p>
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/project-02/1.jpg" alt="Image title 1">
+        <figcaption><strong>Image title 1</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-02/2.jpg" alt="Image title 2">
+        <figcaption><strong>Image title 2</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-02/3.jpg" alt="Image title 3">
+        <figcaption><strong>Image title 3</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-02/4.jpg" alt="Image title 4">
+        <figcaption><strong>Image title 4</strong></figcaption>
+      </figure>
+    </div>
+  </section>
 
+  <section class="view" id="project-03">
+    <h2 class="page-title">Project Title–3</h2>
+    <p class="blurb">Replace this with a short paragraph about project 3. Two or three sentences on the idea, materials, year or context.</p>
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/project-03/1.jpg" alt="Image title 1">
+        <figcaption><strong>Image title 1</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-03/2.jpg" alt="Image title 2">
+        <figcaption><strong>Image title 2</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-03/3.jpg" alt="Image title 3">
+        <figcaption><strong>Image title 3</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-03/4.jpg" alt="Image title 4">
+        <figcaption><strong>Image title 4</strong></figcaption>
+      </figure>
+    </div>
+  </section>
 
+  <section class="view" id="project-04">
+    <h2 class="page-title">Project Title–4</h2>
+    <p class="blurb">Replace this with a short paragraph about project 4. Two or three sentences on the idea, materials, year or context.</p>
+    <div class="shots">
+      <figure class="shot">
+        <img src="images/project-04/1.jpg" alt="Image title 1">
+        <figcaption><strong>Image title 1</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-04/2.jpg" alt="Image title 2">
+        <figcaption><strong>Image title 2</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-04/3.jpg" alt="Image title 3">
+        <figcaption><strong>Image title 3</strong></figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="images/project-04/4.jpg" alt="Image title 4">
+        <figcaption><strong>Image title 4</strong></figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<!-- Information overlay (blurred, translucent grey) -->
+<aside class="info" id="info" aria-hidden="true">
+  <div class="info-head">
+    <span>Information</span>
+    <span>CV</span>
+    <button class="info-btn" id="info-close">Close</button>
+  </div>
+
+  <div class="info-row">
+    <div class="col-l">
+      Cargo® Demo<br>
+      <a class="muted" href="mailto:hello@yourdomain.com">Email</a><br>
+      <a class="muted" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="col-r">
+      Cras ut dictum mi. Sed quis lorem semper, elementum mauris vitae, consectetur orci. Cras volutpat eget elit porta facilisis. Aenean fermentum arcu mauris, eu faucibus nisl blandit ac. Proin eget euismod mauris. Quisque vulputate mauris quis tellus ultrices euismod. Quisque eu purus convallis, gravida tortor sed, rutrum velit. Donec placerat pretium sem vel lacinia. Maecenas elementum dolor at posuere auctor.
+    </div>
+  </div>
+
+  <div class="info-row">
+    <div class="col-l">Education</div>
+    <div class="col-r">
+      <p>Vestibulum Euismod Ultrices (Congue)<br>Suspendisse Aenean Lectus<br>2023</p>
+      <p>Vestibulum Euismod Ultrices (Tincidunt)</p>
+      <p>Aliquam Faucibus Tellus<br>(3 years)</p>
+    </div>
+  </div>
+
+  <div class="info-row">
+    <div class="col-l">Employment</div>
+    <div class="col-r">
+      <p>Vestibulum Ultricies<br>Suspendisse Aenean Vestibulum<br>2023 - 2024</p>
+      <p>Pellentesque Habitant<br>‘Morbi Tristique Senectus’<br>Nunc Euismod Faucibus,<br>Porta Libero<br>2024</p>
+      <p>Volutpat Ultricies<br>Curabitur Fringilla Ornare,<br>Duis Quis<br>(since 2020)</p>
+      <p>Aliquam Convallis<br><em>TEMPUS, TEMPUS, TEMPUS</em><br>Molestie Vulputate<br>Lacus Venenatis<br>2023</p>
+      <p>Nunc Consequat<br>Donec Euismod Imperdiet,<br>Pharetra Massa<br>2023</p>
+    </div>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
 </body>
-
 </html>
