@@ -32,6 +32,7 @@ button{background:none;border:0;font:inherit;font-weight:500;color:inherit;curso
 main{height:100%}
 .view{display:none;position:absolute;inset:0;padding:60px 14px 60px;overflow:auto}
 .view.on{display:block}
+.view{overflow-x:hidden}
 .page-title{text-align:center;font-size:13pt;font-weight:500;margin-top:22px}
 
 /* Landing gallery */
@@ -75,6 +76,11 @@ main{height:100%}
 .col-r{padding-right:6px}
 .col-r p{margin-bottom:1.35em}
 .col-r p:last-child{margin-bottom:0}
+
+/* Page transitions */
+.topbar{view-transition-name:topbar}
+::view-transition-group(*){animation-duration:.8s;animation-timing-function:cubic-bezier(.65,0,.25,1)}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.5s}
 
 @media(max-width:700px){
   .topbar{grid-template-columns:1fr auto;height:auto;padding:6px 12px;row-gap:3px}
