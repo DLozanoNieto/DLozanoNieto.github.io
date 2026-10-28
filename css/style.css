@@ -5,8 +5,8 @@
   --muted:#9f9c9c;         /* inactive menu / secondary text */
   --line:#ece7e3;          /* rules in the Information panel */
   --font:"Inter",Helvetica,Arial,sans-serif;
-  --size:8pt;
-  --bar-h:23px;
+  --size:10pt;
+  --bar-h:25px;
   --gap:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -81,6 +81,10 @@ main{height:100%}
 .topbar{view-transition-name:topbar}
 ::view-transition-group(*){animation-duration:.8s;animation-timing-function:cubic-bezier(.65,0,.25,1)}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.5s}
+@keyframes vt-out-l{to{transform:translateX(-120vw)}}
+@keyframes vt-out-r{to{transform:translateX(120vw)}}
+@keyframes vt-in-l{from{transform:translateX(-120vw)}}
+@keyframes vt-in-r{from{transform:translateX(120vw)}}
 
 @media(max-width:700px){
   .topbar{grid-template-columns:1fr auto;height:auto;padding:6px 12px;row-gap:3px}

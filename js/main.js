@@ -5,8 +5,9 @@
       tiles=[].slice.call(document.querySelectorAll('.tile')),
       reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       canVT=!!document.startViewTransition&&!reduce,
-      busy=false, swipedOut=false, sharedNext=false,
-      currentId='home', lastProject=null, lastPairs=[];
+      sharedNext=false, currentId='home', lastProject=null, lastPairs=[],
+      swipeStyle=document.createElement('style');
+  document.head.appendChild(swipeStyle);
 
   /* ---------- basic page switching ---------- */
   function render(id){
@@ -18,6 +19,10 @@
   function setInfo(open){
     info.classList.toggle('open',open);
     info.setAttribute('aria-hidden',!open);
+  }
+  function setName(el,name){
+    if(name) el.style.setProperty('view-transition-name',name);
+    else el.style.removeProperty('view-transition-name');
   }
 
   /* ---------- pair landing images with the project page images ---------- */
@@ -40,11 +45,20 @@
     });
     return pairs;
   }
-  function setName(pair,i){
-    pair.forEach(function(el){
-      if(i===null) el.style.removeProperty('view-transition-name');
-      else el.style.setProperty('view-transition-name','shared-'+i);
+
+  /* ---------- swipe rules for the other images (run inside the transition) ---------- */
+  function swipeCSS(others,mode){
+    var w=window.innerWidth, css='';
+    others.forEach(function(o){
+      var r=o.t.getBoundingClientRect(),
+          side=(r.left+r.width/2)<w/2?'l':'r',
+          d=Math.min(o.i*35,300);
+      if(mode==='out')
+        css+='::view-transition-old(tile-'+o.i+'){animation:vt-out-'+side+' .6s cubic-bezier(.6,0,.9,.4) '+d+'ms both}';
+      else
+        css+='::view-transition-new(tile-'+o.i+'){animation:vt-in-'+side+' .8s cubic-bezier(.16,1,.3,1) '+d+'ms both}';
     });
+    swipeStyle.textContent=css;
   }
 
   /* ---------- navigate with animation ---------- */
@@ -53,65 +67,46 @@
     if(id===currentId) return;
     var from=currentId; currentId=id;
 
-    var shared=[];
-    if(sharedNext) shared=lastPairs;                                  // gallery -> project
-    else if(id==='home'&&from===lastProject) shared=lastPairs;        // project -> gallery
+    var mode=null;
+    if(sharedNext) mode='out';                                  // gallery -> project
+    else if(id==='home'&&from===lastProject) mode='in';         // project -> gallery
     sharedNext=false;
+
+    var pairs=mode?lastPairs:[],
+        others=mode?tiles.map(function(t,i){return {t:t,i:i}})
+                         .filter(function(o){return o.t.getAttribute('href')!=='#'+lastProject}):[];
 
     function change(){
       render(id);
+      if(mode==='in') swipeCSS(others,'in');
       // if an image's destination is below the fold, let it fade instead of flying off-screen
-      shared.forEach(function(p,i){
+      pairs.forEach(function(p,i){
         var dest=(id==='home')?p[0]:p[1];
-        if(dest.getBoundingClientRect().top>window.innerHeight*0.95) setName(p,null);
+        if(dest.getBoundingClientRect().top>window.innerHeight*0.95){setName(p[0],null);setName(p[1],null)}
       });
     }
     function finish(){
-      shared.forEach(function(p){setName(p,null)});
-      if(id==='home') swipeIn();
+      pairs.forEach(function(p){setName(p[0],null);setName(p[1],null)});
+      others.forEach(function(o){setName(o.t,null)});
+      swipeStyle.textContent='';
     }
 
     if(!canVT){change();finish();return}
-    shared.forEach(function(p,i){setName(p,i)});
+    pairs.forEach(function(p,i){setName(p[0],'shared-'+i);setName(p[1],'shared-'+i)});
+    others.forEach(function(o){setName(o.t,'tile-'+o.i)});
+    if(mode==='out') swipeCSS(others,'out');
     var vt=document.startViewTransition(change);
     vt.finished.then(finish,finish);
-  }
-
-  /* ---------- landing page: other images swipe away / back ---------- */
-  function swipeOut(clicked,done){
-    var href=clicked.getAttribute('href'), w=window.innerWidth;
-    busy=true; swipedOut=true;
-    tiles.forEach(function(t,i){
-      if(t.getAttribute('href')===href) return;           // same project stays put
-      var delay=Math.min(i*35,300),
-          r=t.getBoundingClientRect(),
-          dir=(r.left+r.width/2)<w/2?-1:1;
-      t.style.transition='transform .6s cubic-bezier(.6,0,.9,.4) '+delay+'ms';
-      t.style.transform='translateX('+(dir*(w+40))+'px)';
-    });
-    setTimeout(function(){busy=false;done()},950);
-  }
-  function swipeIn(){
-    if(!swipedOut) return;
-    swipedOut=false;
-    void document.body.offsetHeight;
-    tiles.forEach(function(t,i){
-      var d=Math.min(i*60,500)+'ms';
-      t.style.transition='transform .8s cubic-bezier(.16,1,.3,1) '+d;
-      t.style.transform='';
-    });
-    setTimeout(function(){tiles.forEach(function(t){t.style.transition=''})},1500);
   }
 
   tiles.forEach(function(t){
     t.addEventListener('click',function(e){
       if(e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0) return;
-      if(reduce) return;
+      if(!canVT) return;
       e.preventDefault();
-      if(busy) return;
       var id=t.getAttribute('href').slice(1);
       lastProject=id; lastPairs=pairFor('#'+id);
-      swipeOut(t,function(){sharedNext=true;navigate(id);location.hash=id});
+      sharedNext=true; navigate(id); location.hash=id;
     });
   });
 
