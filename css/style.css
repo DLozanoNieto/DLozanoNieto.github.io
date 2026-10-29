@@ -159,6 +159,7 @@ body.info-open #logo {
   right: 0;
   bottom: 0;
   z-index: 20;
+  mix-blend-mode: difference;   /* same inverting effect as the logo */
   display: flex;
   justify-content: space-between;   /* equal spacing from left edge to right edge */
   align-items: flex-end;
@@ -170,8 +171,8 @@ body.info-open #logo {
 
 #nav a {
   pointer-events: auto;
-  background: var(--fg);
-  color: #050505;
+  background: none;             /* white box removed */
+  color: var(--fg);             /* same color as the logo, so it inverts the same way */
   font-size: clamp(0.58rem, 0.82vw, 0.78rem);
   text-transform: uppercase;
   letter-spacing: -0.015em;

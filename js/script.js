@@ -173,8 +173,6 @@ function arrangeGallery() {
       rows.push(row);
     }
   }
-
-  // Draw the rows. Heights are exact, so every row fills the width perfectly.
     // Draw the rows. Height is capped, and any leftover width becomes extra space between images.
   gallery.innerHTML = "";
   rows.forEach((group) => {
