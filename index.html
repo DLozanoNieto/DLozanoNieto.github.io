@@ -1,209 +1,286 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Diego Lozano — Photography</title>
 
-<head>
-  <meta name="google-site-verification" content="NWBZDqieFOgdbKNnO4wCdwGEKnG5VCzNBWxx4-FIawM" />
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Diego Lozano – Photography</title>
-  <meta name="description" content="Portfolio of Diego Lozano: Photographer based in Vancouver.">
-  <meta property="og:title" content="Diego Lozano – Photographer">
-  <meta property="og:description" content="Portfolio of Diego Lozano: Photographer based in Vancouver.">
-  <meta property="og:image" content="https://dlozanonieto.github.io/images/World's Away, Next Door/Taxi Gas.jpg">
-  <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+    <!-- Search engine (Google) info. Keep these. -->
+    <meta name="google-site-verification" content="NWBZDqieFOgdbKNnO4wCdwGEKnG5VCzNBWxx4-FIawM">
+    <meta name="description" content="Portfolio of Diego Lozano, photographer based in Vancouver, British Columbia.">
+    <meta property="og:title" content="Diego Lozano — Photography">
+    <meta property="og:description" content="Portfolio of Diego Lozano, photographer based in Vancouver, British Columbia.">
+    <meta property="og:image" content="https://dlozanonieto.github.io/images/World's%20Away,%20Next%20Door/Taxi%20Gas.jpg">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://dlozanonieto.github.io/">
 
-<body>
+    <!-- Font and stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
 
-  <header class="topbar">
-    <a class="site-title" href="#home"><strong>Diego Lozano</strong> Gallery</a>
-    <nav class="menu">
-      <a href="#project-01" data-view="project-01">Silos</a>
-      <a href="#project-03" data-view="project-03">Nighthawk</a>
-      <a href="#project-02" data-view="project-02">World's Away, Next Door</a>
-      <!--Project 4 missing-->
-      <a href="#project-05" data-view="project-05">Laberinto</a>
-      <a href="#project-06" data-view="project-06">Early Work</a>
-      <a class="muted" href="https://www.instagram.com/d.n.loz/" target="_blank" rel="noopener">@d.n.loz</a>
+  <body class="home">
+
+    <!-- LOGO: your name, top left. Clicking it goes to the home page. -->
+    <a id="logo" href="#home" aria-label="Diego Lozano home">Diego Lozano</a>
+
+    <!-- INFORMATION BUTTON: top right. Opens the information panel on top of whatever page you are on. -->
+    <nav id="archive-nav" aria-label="Site sections">
+      <a href="#information">Information</a>
     </nav>
-    <button class="info-btn" id="info-open">Information</button>
-  </header>
 
-  <main>
-    <!-- Landing page: scrollable gallery. Each image links to a project.
-         Each .row is one line: one image, or two side by side. Width is --w (percent of page, keep each 50 or less). -->
-    <section class="view" id="home">
-      <div class="gallery">
-        <div class="row pair bot">
-          <a class="tile" style="--w:46" href="#project-01"><img src="images/Silos/Douglas.jpg"
-              alt="Project 01"><span class="tag">Silos</span></a>
-          <a class="tile" style="--w:34" href="#project-02"><img src="images/World's Away, Next Door/Taxi Gas.jpg"
-              alt="Project 02"><span class="tag">World's Away, Next Door</span></a>
+    <!-- ================= PAGES =================
+         Only ONE page below is visible at a time (the others have "hidden").
+         script.js shows and hides them. -->
+    <main id="app" aria-label="Selected works gallery">
+
+      <!-- ============ HOME PAGE ============ -->
+      <div class="page" id="home">
+
+        <!-- Space at the top of the home page (you can type small intro text inside if you want) -->
+        <div class="home-intro"></div>
+
+        <!-- Home gallery. Each <a class="tile"> is one picture on the home page.
+             The order is shuffled every time the page loads.
+             To remove a picture from the home page, delete its tile.
+             To add one, copy a tile and change the link, image path and name. -->
+        <div class="gallery" id="gallery">
+        <a class="tile" href="#project-01">
+          <img src="images/Silos/Douglas.jpg" alt="Silos — Douglas" loading="lazy">
+          <span class="tag">Silos</span>
+        </a>
+        <a class="tile" href="#project-03">
+          <img src="images/Nighthawk/on the rocks.jpg" alt="Nighthawk — Cates" loading="lazy">
+          <span class="tag">Nighthawk</span>
+        </a>
+        <a class="tile" href="#project-02">
+          <img src="images/World's Away, Next Door/Taxi Gas.jpg" alt="World's Away, Next Door — Taxi gas" loading="lazy">
+          <span class="tag">World's Away, Next Door</span>
+        </a>
+        <a class="tile" href="#project-02">
+          <img src="images/World's Away, Next Door/glass.jpg" alt="World's Away, Next Door — Glass" loading="lazy">
+          <span class="tag">World's Away, Next Door</span>
+        </a>
+        <a class="tile" href="#project-02">
+          <img src="images/World's Away, Next Door/glass2.jpg" alt="World's Away, Next Door — Glass 2" loading="lazy">
+          <span class="tag">World's Away, Next Door</span>
+        </a>
+        <a class="tile" href="#project-05">
+          <img src="images/Laberinto/hola aeropuerto.jpg" alt="Laberinto — Hola, Aeropuerto" loading="lazy">
+          <span class="tag">Laberinto</span>
+        </a>
+        <a class="tile" href="#project-06">
+          <img src="images/Early Work/refuse.jpg" alt="Early Work — Refuse" loading="lazy">
+          <span class="tag">Early Work</span>
+        </a>
+        <a class="tile" href="#project-06">
+          <img src="images/Early Work/Aire Plastique.jpg" alt="Early Work — Aire Plastique" loading="lazy">
+          <span class="tag">Early Work</span>
+        </a>
         </div>
-        <div class="row pair bot">
-          <a class="tile" style="--w:36" href="#project-03"><img src="images/Nighthawk/on the rocks.jpg"
-              alt="Project 03"><span class="tag">Nighthawk</span></a>
-          <a class="tile" style="--w:35" href="#project-06"><img src="images/Early Work/Aire Plastique.jpg"
-              alt="Project 04"><span class="tag">Early Work</span></a>
+      </div>
+
+    <!-- ============ PROJECT 01: SILOS ============ -->
+    <article class="project page" id="project-01" hidden>
+      <header class="project-head">
+        <div>
+          <div class="meta">Photography — 2026</div>   <!-- small line above the title: type — year -->
+          <h1>Silos</h1>                          <!-- project title -->
         </div>
-        <div class="row pair top">
-          <a class="tile" style="--w:28" href="#project-05"><img src="images/Laberinto/hola aeropuerto.jpg"
-              alt="Project 01"><span class="tag">Laberinto</span></a>
-          <a class="tile" style="--w:44" href="#project-06"><img src="images/Early Work/refuse.jpg"
-              alt="Project 03"><span class="tag">Early Work</span></a>
+        <p class="blurb">This is the project 01 description. Replace this text with two or three sentences about the project.</p>
+      </header>
+
+      <!-- Project 01 images. Each <figure> is one image. Copy/paste a <figure> block to add another. -->
+      <div class="shots">
+          <figure class="shot">
+            <img src="images/Silos/Douglas.jpg" alt="Douglas" loading="lazy">
+            <figcaption><strong>Douglas</strong> // 2026</figcaption>
+          </figure>
+      </div>
+
+      <!-- Link to the next project -->
+      <a class="next" href="#project-03"><small>Next project</small>Nighthawk →</a>
+    </article>
+    <!-- ============ PROJECT 03: NIGHTHAWK ============ -->
+    <article class="project page" id="project-03" hidden>
+      <header class="project-head">
+        <div>
+          <div class="meta">Photography — 2021</div>   <!-- small line above the title: type — year -->
+          <h1>Nighthawk</h1>                          <!-- project title -->
         </div>
-        <div class="row c">
-          <a class="tile" style="--w:40" href="#project-02"><img src="images/World's Away, Next Door/Taxi Gas.jpg"
-              alt="Project 02"><span class="tag">World's Away, Next Door</span></a>
+        <p class="blurb">This is the project 03 description. Replace this text with two or three sentences about the project.</p>
+      </header>
+
+      <!-- Project 03 images. Each <figure> is one image. Copy/paste a <figure> block to add another. -->
+      <div class="shots">
+          <figure class="shot">
+            <img src="images/Nighthawk/on the rocks.jpg" alt="Cates" loading="lazy">
+            <figcaption><strong>Cates</strong> // 2021</figcaption>
+          </figure>
+      </div>
+
+      <!-- Link to the next project -->
+      <a class="next" href="#project-02"><small>Next project</small>World's Away, Next Door →</a>
+    </article>
+    <!-- ============ PROJECT 02: WORLD'S AWAY, NEXT DOOR ============ -->
+    <article class="project page" id="project-02" hidden>
+      <header class="project-head">
+        <div>
+          <div class="meta">Photography — 2021–2026</div>   <!-- small line above the title: type — year -->
+          <h1>World's Away, Next Door</h1>                          <!-- project title -->
         </div>
-        <div class="row pair mid">
-          <a class="tile" style="--w:24" href="#project-02"><img src="images/World's Away, Next Door/glass.jpg" alt="Project 04"><span
-              class="tag">World's Away, Next Door</span></a>
-          <a class="tile" style="--w:46" href="#project-01"><img src="images/Silos/Douglas.jpg"
-              alt="Project 01"><span class="tag">Silos</span></a>
+        <p class="blurb">This is the project 02 description. Replace this text with two or three sentences about the project.</p>
+      </header>
+
+      <!-- Project 02 images. Each <figure> is one image. Copy/paste a <figure> block to add another. -->
+      <div class="shots">
+          <!-- Image 1: full width -->
+          <figure class="shot">
+            <img src="images/World's Away, Next Door/Taxi Gas.jpg" alt="Taxi gas" loading="lazy">
+            <figcaption><strong>Taxi gas</strong> // 2026</figcaption>
+          </figure>
+
+          <!-- Images 2 and 3: shown side by side as a pair.
+               To add a full-width image after the pair, copy a <figure> block and paste it below the pair. -->
+          <div class="two-up">
+          <figure class="shot">
+            <img src="images/World's Away, Next Door/glass.jpg" alt="Glass" loading="lazy">
+            <figcaption><strong>Glass</strong> // 2021</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/World's Away, Next Door/glass2.jpg" alt="Glass 2" loading="lazy">
+            <figcaption><strong>Glass 2</strong> // 2021</figcaption>
+          </figure>
+          </div>
+      </div>
+
+      <!-- Link to the next project -->
+      <a class="next" href="#project-05"><small>Next project</small>Laberinto →</a>
+    </article>
+    <!-- ============ PROJECT 05: LABERINTO ============ -->
+    <article class="project page" id="project-05" hidden>
+      <header class="project-head">
+        <div>
+          <div class="meta">Photography — 2017</div>   <!-- small line above the title: type — year -->
+          <h1>Laberinto</h1>                          <!-- project title -->
         </div>
-        <div class="row pair">
-          <a class="tile" style="--w:30;align-self:flex-start" href="#project-06"><img
-              src="images/Early Work/refuse.jpg" alt="Project 03"><span class="tag">Early Work</span></a>
-          <a class="tile" style="--w:40" href="#project-05"><img src="images/Laberinto/hola aeropuerto.jpg"
-              alt="Project 02"><span class="tag">Laberinto</span></a>
-          <a class="tile" style="--w:25;align-self:center" href="#project-03"><img
-              src="images/Nighthawk/on the rocks.jpg" alt="Project 04"><span class="tag">Nighthawk</span></a>
+        <p class="blurb">This is the project 05 description. Replace this text with two or three sentences about the project.</p>
+      </header>
+
+      <!-- Project 05 images. Each <figure> is one image. Copy/paste a <figure> block to add another. -->
+      <div class="shots">
+          <figure class="shot">
+            <img src="images/Laberinto/hola aeropuerto.jpg" alt="Hola, Aeropuerto" loading="lazy">
+            <figcaption><strong>Hola, Aeropuerto</strong> // 2017</figcaption>
+          </figure>
+      </div>
+
+      <!-- Link to the next project -->
+      <a class="next" href="#project-06"><small>Next project</small>Early Work →</a>
+    </article>
+    <!-- ============ PROJECT 06: EARLY WORK ============ -->
+    <article class="project page" id="project-06" hidden>
+      <header class="project-head">
+        <div>
+          <div class="meta">Archive — 2017</div>   <!-- small line above the title: type — year -->
+          <h1>Early Work</h1>                          <!-- project title -->
         </div>
-        <div class="row l">
-          <a class="tile" style="--w:30" href="#project-01"><img src="images/Silos/Douglas.jpg"
-              alt="Project 01"><span class="tag">Silos</span></a>
+        <p class="blurb">This is the project 06 description. Replace this text with two or three sentences about the project.</p>
+      </header>
+
+      <!-- Project 06 images. Each <figure> is one image. Copy/paste a <figure> block to add another. -->
+      <div class="shots">
+          <figure class="shot">
+            <img src="images/Early Work/refuse.jpg" alt="Refuse" loading="lazy">
+            <figcaption><strong>Refuse</strong> // 2017</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/Early Work/Aire Plastique.jpg" alt="Aire Plastique" loading="lazy">
+            <figcaption><strong>Aire Plastique</strong> // 2017</figcaption>
+          </figure>
+      </div>
+
+      <!-- Link to the next project -->
+      <a class="next" href="#project-01"><small>Next project</small>Silos →</a>
+    </article>
+
+    </main>
+
+    <!-- ============ BOTTOM MENU: one button per project ============
+         data-id must match the project's id above. -->
+    <nav id="nav" aria-label="Selected projects">
+      <h2 class="sr-only">Project menu</h2>
+      <a href="#project-01" data-id="project-01">Silos</a>
+      <a href="#project-03" data-id="project-03">Nighthawk</a>
+      <a href="#project-02" data-id="project-02">World's Away, Next Door</a>
+      <a href="#project-05" data-id="project-05">Laberinto</a>
+      <a href="#project-06" data-id="project-06">Early Work</a>
+    </nav>
+
+    <!-- ============ INFORMATION PANEL ============
+         Slides over the current page. Edit the text below freely. -->
+    <section id="info" aria-hidden="true">
+      <h2 class="sr-only">Information and contact</h2>
+      <div class="info-inner">
+
+        <!-- Top bar of the panel -->
+        <div class="info-head">
+          <span>Information</span>
+          <button id="info-close" type="button">Close ×</button>
+          <span>CV / Contact</span>
         </div>
+
+        <!-- About / contact -->
+        <div class="info-row">
+          <div class="col-l">
+            Diego Lozano<br>
+            <a href="mailto:dlozanonieto@outlook.com">Email</a><br>
+            <a href="https://www.instagram.com/d.n.loz/" target="_blank" rel="noopener">@d.n.loz</a>
+          </div>
+          <div class="col-r">
+            Diego is a early career photographer based out of Vancouver, BC who explores urban environments, city life, and abstracts the everyday. His range of work covers expressionist scenes that engage to viewers, the scale of human "progress", and the frivolities found in the world. At it's core, his images hope to invoke a feeling, emotion, memory, or desire; to slow down, observe, question, and appreciate what exists around us.
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="info-row">
+          <div class="col-l">Education</div>
+          <div class="col-r">
+            <p>The Globe Photo Academy B.C. Training and Mentorship Program<br>2026</p>
+            <p>Master of Landscape Architecture<br>2026</p>
+            <p>B.A. Environmental Geography<br>2023</p>
+            <p>Emily Carr Summer Program<br>2017</p>
+          </div>
+        </div>
+
+        <!-- Works / publications -->
+        <div class="info-row">
+          <div class="col-l">Works</div>
+          <div class="col-r">
+            <p>
+              The Globe And Mail Foundation<br>
+              Online Gallery<br>
+              2026<br>
+              <a href="https://www.globeandmailfoundation.com/globe-photo-academy-2026-bc/diego-lozano" target="_blank" rel="noopener">Link to Gallery</a>
+            </p>
+            <p>The Ubyssey<br>Staff Photographer<br>2019-2021</p>
+          </div>
+        </div>
+
+        <!-- Social / email links -->
+        <div class="info-row">
+          <div class="col-l">Follow</div>
+          <div class="col-r">
+            <a href="https://www.instagram.com/d.n.loz/" target="_blank" rel="noopener">Instagram — @d.n.loz</a><br>
+            <a href="mailto:dlozanonieto@outlook.com">dlozanonieto@outlook.com</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="view" id="project-01">
-      <h2 class="page-title">Silos</h2>
-      <p class="blurb">Replace this with a short paragraph about project 1. Two or three sentences on the idea,
-        materials, year or context.</p>
-      <div class="shots">
-        <figure class="shot">
-          <img src="images/Silos/Douglas.jpg" alt="Image title 1">
-          <figcaption><strong>Douglas </strong>// 2026 </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="view" id="project-02">
-      <h2 class="page-title">World's Away, Next Door</h2>
-      <p class="blurb">Replace this with a short paragraph about project 2. Two or three sentences on the idea,
-        materials, year or context.</p>
-      <div class="shots">
-        <figure class="shot">
-          <img src="images/World's Away, Next Door/Taxi Gas.jpg" alt="Image title 1">
-          <figcaption><strong>Taxi gas </strong>// 2026</figcaption>
-        </figure>
-      </div>
-      <div class="shot-pair">
-        <figure class="shot">
-          <img src="images/World's Away, Next Door/glass.jpg" alt="Image title 1">
-          <figcaption><strong>Glass </strong> // 2021</figcaption>
-        </figure>
-        <figure class="shot">
-          <img src="images/World's Away, Next Door/glass2.jpg" alt="Image title 2">
-          <figcaption><strong>Glass 2 </strong> // 2021</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="view" id="project-03">
-      <h2 class="page-title">Nighthawk</h2>
-      <p class="blurb">Replace this with a short paragraph about project 3. Two or three sentences on the idea,
-        materials, year or context.</p>
-      <div class="shots">
-        <figure class="shot">
-          <img src="images/Nighthawk/on the rocks.jpg" alt="Image title 1">
-          <figcaption><strong>Cates </strong>// 2021</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="view" id="project-05">
-      <h2 class="page-title">Laberinto</h2>
-      <p class="blurb">Replace this with a short paragraph about project 4. Two or three sentences on the idea,
-        materials, year or context.</p>
-      <div class="shots">
-        <figure class="shot">
-          <img src="images/Laberinto/hola aeropuerto.jpg" alt="Image title 1">
-          <figcaption><strong>Hola, Aeropuerto </strong>//2017</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="view" id="project-06">
-      <h2 class="page-title">Early Work</h2>
-      <p class="blurb">Replace this with a short paragraph about project 4. Two or three sentences on the idea,
-        materials, year or context.</p>
-      <div class="shots">
-        <figure class="shot">
-          <img src="images/Early Work/refuse.jpg" alt="Image title 1">
-          <figcaption><strong>Refuse </strong>//2017</figcaption>
-        </figure>
-      </div>
-      <div class="shots">
-        <figure class="shot">
-          <img src="images/Early Work/Aire Plastique.jpg" alt="Image title 1">
-          <figcaption><strong>Aire Plastique </strong>// 2017</figcaption>
-        </figure>
-      </div>
-    </section>
-  </main>
-
-  <!-- Information overlay (blurred, translucent grey) -->
-  <aside class="info" id="info" aria-hidden="true">
-    <div class="info-head">
-      <span>Information</span>
-      <span>CV</span>
-      <button class="info-btn" id="info-close">Close</button>
-    </div>
-
-    <div class="info-row">
-      <div class="col-l">
-        Diego Lozano<br>
-        <a class="muted" href="mailto:dlozanonieto@outlook.com">Email</a><br>
-        <a class="muted" href="https://www.instagram.com/d.n.loz/" target="_blank" rel="noopener">@d.n.loz</a>
-      </div>
-      <div class="col-r">
-        Diego is a early career photgrapher based out of Vancouver, BC who explores urban environments, city life, and
-        abstractes the everyday. His range of work covers
-        expressionist scenes that engage to viewers, the scale of human "progress", and the frivolities found in the
-        world. At it's core, his images hope to
-        invoke a feeling, emotion, memory, or desire; to slow down, observe, question, and appreciate what exists around
-        us.
-      </div>
-    </div>
-
-    <div class="info-row">
-      <div class="col-l">Education</div>
-      <div class="col-r">
-        <p>The Globe Photo Academy B.C. Training and Mentorship Program<br>2026</p>
-        <p>Master of Landscape Architecure<br>2026</p>
-        <p>B.A. Environmental Geography<br>2023</p>
-        <p>Emily Carr Summer Program<br>2017</p>
-      </div>
-    </div>
-
-    <div class="info-row">
-      <div class="col-l">Works</div>
-      <div class="col-r">
-        <p>The Globe And Mail Foundation<br>Online Gallery<br>2026<br> <a
-            href="https://www.globeandmailfoundation.com/globe-photo-academy-2026-bc/diego-lozano" target="_blank"
-            rel="noopener">Link to Gallery</a> </p>
-        <p>The Ubyssey<br>Staff Photograher<br>2019-2021</p>
-      </div>
-    </div>
-  </aside>
-
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
