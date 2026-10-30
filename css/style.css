@@ -269,6 +269,25 @@ body.info-open #logo {
   height: auto;
   max-width: 100%;
 }
+/* THREE IMAGES SIDE BY SIDE */
+.three-up {
+  display: flex;
+  gap: clamp(18px, 2vw, 32px);
+  width: min(100%, 1200px);   /* max width of the row; raise 1200px for wider images */
+  align-items: center;   /* centres the images vertically against each other */
+}
+
+.three-up .shot {
+  flex: 1 1 0;                /* each image takes an equal third */
+  min-width: 0;
+  margin: 0;
+}
+
+.three-up .shot img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
 
 .shot {
   position: relative;
